@@ -1,0 +1,2 @@
+class ComplexZeroError(Exception):
+    pass
