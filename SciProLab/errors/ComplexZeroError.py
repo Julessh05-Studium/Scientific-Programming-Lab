@@ -1,2 +1,5 @@
 class ComplexZeroError(Exception):
-    pass
+
+    @classmethod
+    def get_description(cls):
+        return "Error rose, because the complex number is zero."
