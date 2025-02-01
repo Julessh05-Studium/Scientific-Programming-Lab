@@ -1,10 +1,4 @@
-import scipro
-
-
-
-import unittest
 import math
-import matplotlib.pyplot as plt
 
 
 
@@ -66,9 +60,9 @@ class ComplexNumber:
             new_imag = self.imag * other
             return ComplexNumber(new_real, new_imag)
         elif type(other) == ComplexNumber:
-        new_real = self.real * other.real - self.imag * other.imag
-        new_imag = self.real * other.imag + self.imag * other.real
-        return ComplexNumber(new_real, new_imag)
+            new_real = self.real * other.real - self.imag * other.imag
+            new_imag = self.real * other.imag + self.imag * other.real
+            return ComplexNumber(new_real, new_imag)
         else:
             raise TypeError
 
@@ -97,11 +91,12 @@ class ComplexNumber:
             raise TypeError
         
     def __rmul__(self,other):
-        return self.__mul____(other)
+        return self * other
+        # return self.__mul____(other)
         
     def __rtruediv__(self,other):
         if type(other) in (int,float):
-            return ComplexNumber(other,0).__truediv__(self)
+            return ComplexNumber(other,0) / self
         else:
             raise TypeError
         
@@ -146,4 +141,3 @@ class ComplexNumber:
 
     def to_tuple(self):
         return (self.real, self.imag)
-
